@@ -1,0 +1,28 @@
+# Secrets — never commit
+*.local
+.profile
+.npmrc
+.env
+.emulator_console_auth_token
+
+# SSH keys — config only, no keys
+ssh/.ssh/id_*
+ssh/.ssh/*.pem
+ssh/.ssh/known_hosts*
+ssh/.ssh/authorized_keys
+ssh/.ssh/cm/
+
+# Large cloned repos — installed at runtime
+zsh/.config/zsh/oh-my-zsh/
+zsh/.config/zsh/themes/
+nvim/.config/nvim/plugin/
+
+# Homebrew lock
+Brewfile.lock.json
+
+# OS / editor debris
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.log

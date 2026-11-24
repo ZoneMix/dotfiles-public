@@ -1,0 +1,12 @@
+# Copied to ~/.profile.local on first install. Never commit the filled-in file.
+# Secrets and machine-specific exports go here; zshrc.sh sources it.
+
+# GPG key id used by encrypt_file
+# export KEYID=0xCHANGEME
+
+# age: public key to encrypt to, and identity files to decrypt with
+# export RECIPIENT=age1CHANGEME
+# export IDENTITY_FILES=("$HOME/.age/key.txt")
+
+# Cloud profiles, API tokens and anything else private
+# export AWS_PROFILE=CHANGEME

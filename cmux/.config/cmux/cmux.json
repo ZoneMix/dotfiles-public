@@ -1,0 +1,54 @@
+{
+  "$schema": "https://raw.githubusercontent.com/manaflow-ai/cmux/main/web/data/cmux.schema.json",
+  "schemaVersion": 1,
+
+  // Terminal RENDERING (font, theme, colours) is not set here — cmux reads that
+  // from ~/.config/ghostty/config. This file is cmux's own behaviour only.
+  //
+  // Reload after editing: `cmux reload-config` or Cmd+Shift+,
+  // Full reference: https://cmux.com/docs/configuration
+
+  "app": {
+    // Ships as true by default; cmux sends PostHog telemetry when enabled.
+    "sendAnonymousTelemetry": false,
+    // Matches EDITOR=nvim in zsh/.config/zsh/zshrc.sh
+    "preferredEditor": "nvim",
+    "confirmQuit": "dirty-only"
+  },
+
+  "terminal": {
+    // Mirrors .tmux.conf's MouseDragEnd1Pane -> copy-pipe-and-cancel 'pbcopy'
+    "copyOnSelect": true
+  },
+
+  "automation": {
+    // cmux exposes a Unix control socket at ~/.local/state/cmux/cmux.sock.
+    // "cmuxOnly" is the restrictive default; the schema also permits allowAll /
+    // openAccess / fullOpenAccess, which would let ANY local process drive the
+    // terminal and the embedded browser. Pinned here so a stray GUI click in
+    // Settings can't silently widen it without showing up in git.
+    "socketControlMode": "cmuxOnly",
+    "claudeCodeIntegration": true
+  },
+
+  "browser": {
+    // Local dashboards open in the embedded browser. Add your own host patterns.
+    "hostsToOpenInEmbeddedBrowser": [
+      "localhost",
+      "127.0.0.1"
+    ]
+  },
+
+  "shortcuts": {
+    // Vim-style pane navigation, matching the h/j/k/l binds in .tmux.conf.
+    // Deliberately NOT rebinding a Ctrl-S prefix: that is the tmux prefix still
+    // in use on remote hosts, and a local chord would swallow it
+    // before it ever reached the remote session.
+    "bindings": {
+      "focusLeft": "cmd+opt+h",
+      "focusDown": "cmd+opt+j",
+      "focusUp": "cmd+opt+k",
+      "focusRight": "cmd+opt+l"
+    }
+  }
+}

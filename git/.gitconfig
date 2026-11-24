@@ -1,0 +1,8 @@
+[user]
+	name = Your Name
+	email = you@example.com
+[url "https://github.com/"]
+	insteadOf = git@github.com:
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential

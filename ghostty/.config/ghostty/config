@@ -1,0 +1,13 @@
+# Ghostty configuration
+#
+# Read by BOTH standalone Ghostty.app and cmux — cmux is Ghostty-based and takes
+# its terminal rendering (font, theme, colours, cursor) from this file. cmux's own
+# behaviour (sidebar, tabs, splits, shortcuts) lives in ~/.config/cmux/cmux.json.
+#
+# Search order cmux uses:
+#   1. ~/.config/ghostty/config          <- this file
+#   2. ~/Library/Application Support/com.mitchellh.ghostty/config
+
+# Matches kitty/.config/kitty/kitty.conf
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 14
