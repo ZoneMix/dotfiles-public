@@ -53,7 +53,6 @@ check_symlink "$HOME/.config/yabai/yabairc"
 check_symlink "$HOME/.config/skhd/skhdrc"
 check_symlink "$HOME/.config/spacebar/spacebarrc"
 check_symlink "$HOME/.config/nvim/init.lua"
-check_symlink "$HOME/.ssh/config"
 
 echo ""
 echo "Checking cloned repos..."

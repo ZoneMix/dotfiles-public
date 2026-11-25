@@ -38,7 +38,7 @@ for pkg in "${PACKAGES[@]}"; do
   done < <(cd "$DOTFILES/$pkg" && find . -type f)
 
   # Stow the package. Continue on failure so remaining packages still get stowed.
-  if ! stow --dir="$DOTFILES" --target="$HOME" --restow "$pkg" 2>&1; then
+  if ! stow --no-folding --dir="$DOTFILES" --target="$HOME" --restow "$pkg" 2>&1; then
     echo "  WARNING: stow failed for $pkg"
     ((STOW_FAILURES++)) || true
   fi
